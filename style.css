@@ -1,0 +1,493 @@
+/* ==========================================================================
+   1. GENEL AYARLAR VE FONT TANIMLAMALARI
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth; /* Sayfa içi geçişleri akıcı yapar */
+}
+
+body {
+    background-color: #000033; /* Derin kurumsal savunma sanayii laciverti */
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ==========================================================================
+   2. NAVBAR (NAVİGASYON BAŞLIĞI) TASARIMI
+   ========================================================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: rgba(0, 0, 51, 0.95); /* Yarı şeffaf lacivert */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(160, 172, 189, 0.1); /* İnce gümüş-mavi çizgi */
+    backdrop-filter: blur(10px); /* Modern flulaştırma efekti */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #a0acbd; /* Elit gümüş-mavi tonu */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 35px;
+}
+
+.nav-links a {
+    font-size: 16px;
+    font-weight: 400;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #a0acbd; /* Üzerine gelince gümüş-mavi parlasın */
+}
+
+/* ==========================================================================
+   3. GİRİŞ (HERO SECTION) TASARIMI
+   ========================================================================== */
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 150px 8% 100px 8%;
+    min-height: 85vh;
+}
+
+.hero-text {
+    flex: 1;
+    padding-right: 50px;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* "Yazılım Mühendisi" vurgusunu gümüş-maviye çeken parıltı */
+.highlight {
+    color: #a0acbd;
+    text-shadow: 0 0 10px rgba(160, 172, 189, 0.4);
+}
+
+.hero-text p {
+    font-size: 16px;
+    color: #ccd6f6; /* Gözü yormayan açık gri-mavi metin */
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* Buton Düzenlemeleri */
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: 0.4s ease;
+    cursor: pointer;
+}
+
+.btn-github {
+    background-color: #a0acbd; /* Metalik mavi-gri buton */
+    color: #000033;
+}
+
+.btn-github:hover {
+    background-color: #8a96a7;
+    transform: translateY(-3px); /* Yukarı sıçrama efekti */
+    box-shadow: 0 5px 15px rgba(160, 172, 189, 0.3);
+}
+
+.btn-linkedin {
+    border: 2px solid #a0acbd;
+    color: #a0acbd;
+    background-color: transparent;
+}
+
+.btn-linkedin:hover {
+    background-color: rgba(160, 172, 189, 0.1);
+    transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   4. SAĞ TARAFTAKİ PROFİL FOTOĞRAFI VE UÇUŞ SİHİRİ
+   ========================================================================== */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Fotoğrafını dairesel, gümüş çerçeveli yapan ve uçuran stil */
+.profile-image {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%; /* Kusursuz daire yapar */
+    object-fit: cover; /* Fotoğrafın en-boy oranını bozmadan sığdırır */
+    border: 5px solid rgba(160, 172, 189, 0.2); /* Yeni gümüş-mavi kenarlık */
+    box-shadow: 0 0 30px rgba(160, 172, 189, 0.2);
+    animation: floating 3s ease-in-out infinite; /* Süzülme animasyonunu tetikler */
+}
+
+/* Havada Asılı Kalma Animasyonu (Uçuş Modu) */
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+/* ==========================================================================
+   5. PROJELERİM (CARDS) ALANI TASARIMI
+   ========================================================================== */
+.projects-section {
+    padding: 80px 8%;
+    background-color: #000022; /* Bir tık daha koyu lacivert ile derinlik hissi */
+    text-align: center;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: #ffffff;
+    position: relative;
+}
+
+/* Başlığın altına şık bir gümüş çizgi çekiyoruz */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #a0acbd;
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Ekran küçülürse kartlar alt alta düzgünce insin */
+    margin-top: 20px;
+}
+
+.project-card {
+    background-color: rgba(160, 172, 189, 0.03); /* Çok hafif gümüş şeffaflık */
+    border: 1px solid rgba(160, 172, 189, 0.1); /* İnce gümüş çerçeve */
+    padding: 35px 25px;
+    border-radius: 10px;
+    width: 320px;
+    text-align: left;
+    transition: 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* İHA Kartlarının üzerine gelince parlayıp yukarı zıplama efekti */
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(160, 172, 189, 0.4);
+    box-shadow: 0 10px 25px rgba(160, 172, 189, 0.15);
+    background-color: rgba(160, 172, 189, 0.06);
+}
+
+.card-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.project-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.project-card p {
+    font-size: 14px;
+    color: #ccd6f6;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1; /* Yazılar kısa olsa bile butonları aynı hizaya eşitler */
+}
+
+.card-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #a0acbd;
+    color: #a0acbd;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.card-btn:hover {
+    background-color: #a0acbd;
+    color: #000033;
+}
+/* ==========================================================================
+   6. İLETİŞİM VE FOOTER ALANI TASARIMI
+   ========================================================================== */
+.contact-section {
+    padding: 100px 8% 40px 8%;
+    background-color: #000033; /* Giriş alanıyla aynı derin lacivert */
+    text-align: center;
+    border-top: 1px solid rgba(160, 172, 189, 0.05); /* Çok hafif üst çizgi */
+}
+
+.contact-section h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.contact-section p {
+    font-size: 16px;
+    color: #ccd6f6;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+.contact-btn {
+    padding: 12px 25px;
+    border: 1px solid rgba(160, 172, 189, 0.3);
+    border-radius: 5px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    background-color: rgba(160, 172, 189, 0.02);
+}
+
+.contact-btn:hover {
+    border-color: #a0acbd;
+    background-color: rgba(160, 172, 189, 0.08);
+    transform: translateY(-3px);
+}
+
+/* En alttaki kurumsal imza alanı */
+.main-footer {
+    border-top: 1px solid rgba(160, 172, 189, 0.1);
+    padding-top: 30px;
+    color: #8892b0;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* Aktif olan sayfa linkini gümüş rengi yapma */
+.nav-links a.active {
+    color: #a0acbd;
+    font-weight: 600;
+}
+
+/* Hakkımda sayfası kart yerleşimleri */
+.about-page-section {
+    padding: 150px 8% 80px 8%;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.about-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.about-card {
+    background-color: rgba(160, 172, 189, 0.03);
+    border: 1px solid rgba(160, 172, 189, 0.1);
+    padding: 40px;
+    border-radius: 10px;
+    width: 450px;
+    text-align: left;
+    line-height: 2;
+}
+
+.about-card h3 {
+    color: #a0acbd;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(160, 172, 189, 0.2);
+    padding-bottom: 10px;
+}
+
+/* ==========================================================================
+   7. YENİ MULTI-PAGE MODERN HAKKIMDA SAYFASI TASARIMI
+   ========================================================================== */
+
+/* Üst Başlık ve Profil Alanı */
+.about-hero {
+    padding: 140px 8% 40px 8%;
+    background-color: #000033;
+}
+
+.about-hero-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    border-bottom: 1px solid rgba(160, 172, 189, 0.1);
+    padding-bottom: 40px;
+}
+
+.about-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(160, 172, 189, 0.3);
+}
+
+.about-hero-text h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.about-hero-text p {
+    font-size: 15px;
+    color: #8892b0;
+    max-width: 800px;
+    line-height: 1.5;
+}
+
+/* İki Sütunlu Izgara (Grid) Yapısı */
+.about-details-section {
+    padding: 40px 8% 80px 8%;
+    background-color: #000022; /* Bir tık daha koyu alt alan */
+    min-height: 60vh;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Ekranı tam ortadan iki eşit sütuna böler */
+    gap: 50px;
+}
+
+/* Blok İçerikleri */
+.info-block {
+    margin-bottom: 40px;
+}
+
+.info-block h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #a0acbd; /* Gümüş-mavi başlıklar */
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.info-block p {
+    font-size: 15px;
+    color: #ccd6f6;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.info-block strong {
+    color: #ffffff;
+}
+
+/* Tech Stack (Yetenek Kapsülleri) */
+.tech-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.tech-badge {
+    background-color: rgba(160, 172, 189, 0.05);
+    border: 1px solid rgba(160, 172, 189, 0.15);
+    color: #ccd6f6;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+/* Fareyle yeteneklerin üzerine gelince gümüşi parlama efekti */
+.tech-badge:hover {
+    background-color: rgba(160, 172, 189, 0.15);
+    border-color: #a0acbd;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Ekran küçüldüğünde (Mobil/Tablet) sütunların alt alta gelmesi için */
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .about-hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.tech-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.tech-badge {
+    background-color: rgba(160, 172, 189, 0.05);
+    border: 1px solid rgba(160, 172, 189, 0.15);
+    color: #ccd6f6;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.tech-badge:hover {
+    background-color: rgba(160, 172, 189, 0.15);
+    border-color: #a0acbd;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
