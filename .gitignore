@@ -1,0 +1,13 @@
+node_modules/
+.next/
+out/
+.DS_Store
+*.tsbuildinfo
+next-env.d.ts
+
+.env*
+
+
+# Yerel yedekler
+_tasarim-yedegi-2026-10-14/
+_yedek-deneyimler-2026-10-15/

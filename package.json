@@ -1,0 +1,25 @@
+{
+  "name": "zeliha-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "seed": "sanity exec sanity/seed.ts --with-user-token",
+    "seed:experiences": "sanity exec sanity/seedExperiences.ts --with-user-token"
+  },
+  "dependencies": {
+    "next": "latest",
+    "next-sanity": "^13.3.4",
+    "react": "latest",
+    "react-dom": "latest",
+    "sanity": "^6.19.0",
+    "styled-components": "^6.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.5",
+    "@types/react": "19.3.0",
+    "typescript": "7.0.2"
+  }
+}
